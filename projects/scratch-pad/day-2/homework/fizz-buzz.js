@@ -12,11 +12,28 @@
 */
 function fizzBuzz() {
     // YOUR CODE GOES BELOW HERE //
-
-
+    //Input- fizzbizz function
+    //Output-numbers from 1-100
+    //Constraints-multiples of three print Fizz and multiples of five print Buzz
+    //and multiples of both print FizzBuzz
+    //Edge Cases-mulltiples of three and five must print strings instead of numbers
+    for(var i=1; i<=100; i++) {
+       if(i%15 === 0) {
+           console.log('FizzBuzz');
+       } else if (i%3 === 0) {
+               console.log('Fizz');
+           } else if (i%5 ===  0) {
+               console.log('Buzz');
+           } else {
+       console.log(i)
+    }
+    }
+}
+    
+       
 
     // YOUR CODE GOES ABOVE HERE //
-}
+
 
 
 

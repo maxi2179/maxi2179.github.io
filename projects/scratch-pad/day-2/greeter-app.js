@@ -34,7 +34,22 @@
  */
 
 function greeter(hour) {
-    // YOUR CODE BELOW HERE //
+    // YOUR CODE BELOW HERE ///
+    //Input- if else if else staement
+    //Output- greeting acorrding to hour
+    //Constraints-use if else if statement
+    //Edge Cases-
+    
+  
+    if(hour<=11) {
+        console.log('Good Morning!');
+    } else if(hour>11 && hour <=16) {
+        console.log('Good Afternoon!');
+    } else if(hour>16 && hour <=21) {
+        console.log('Good Evening!');
+    } else { console.log('Good Night!')
+    };
+    
     
     
     
@@ -53,7 +68,7 @@ function greeter(hour) {
  * var hour = today.getHours();
  */
 
-greeter(11);
+console.log(greeter(11));
 
 
 

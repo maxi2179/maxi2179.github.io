@@ -21,12 +21,17 @@
 
 function reverseString(input) {
     // YOUR CODE GOES BELOW HERE //
+    //Input- string
+    //Output- that string reversed
+    //Constraints- only take a string as the input
+    //Edge Cases- must return reverse string
+    return input.split('').reverse().join('');
     
-    
-    
+}
+console.log(reverseString('input1'));
     
     // YOUR CODE GOES ABOVE HERE //
-}
+
 
 
 

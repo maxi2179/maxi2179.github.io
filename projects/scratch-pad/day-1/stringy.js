@@ -16,7 +16,7 @@ function length(string) {
     // YOUR CODE BELOW HERE //
     
 return string.length;
-console.log(string);
+
     // YOUR CODE ABOVE HERE //
 }
 
@@ -59,8 +59,9 @@ return string.toUpperCase();
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
 
-    toDashCase().toLowerCase(string);
-
+    //return a sting split by space and joined by dash toLowerCase
+    return string.split(' ').join('-').toLowerCase();
+    
 
     // YOUR CODE ABOVE HERE //
 }
@@ -79,8 +80,15 @@ function toDashCase(string) {
  */
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
     
+    // write if statement that compares index of string and char to match even if cases are different
+    
+if(char.toLowerCase() === string[0].toLowerCase())
+     {
+        return true;
+    } else {
+        return false;
+    }
 
     // YOUR CODE ABOVE HERE //
 }
@@ -97,10 +105,19 @@ function beginsWith(string, char) {
  * TIP: How can you use Array access to your advantage here? How can you
  *      ensure uppercase and lowercase can be compared equally?
  */
+ 
+ 
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
-
+    //Input-string and character
+    //Output-boolean
+    //Constraints-it is case sensitive
+    //Edge Cases-string and character must be compared equally
+if(string[string.length-1].toLowerCase() === char.toLowerCase()) {
+    return true;
+} else {
+    return false;
+}
 
     // YOUR CODE ABOVE HERE //
 }
@@ -112,7 +129,7 @@ function endsWith(string, char) {
  */
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+return stringOne + stringTwo;
 
 
     // YOUR CODE ABOVE HERE //
@@ -131,10 +148,12 @@ function concat(stringOne, stringTwo) {
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     var args = Array.from(arguments);
-
-
-    // YOUR CODE ABOVE HERE //
+   return args.join('');
+    
 }
+console.log(join('my', 'name', 'is', 'ben'));
+    // YOUR CODE ABOVE HERE //
+
 
 /**
  * Given two Strings, return the longest of the two.
@@ -147,7 +166,12 @@ function join(stringOne, stringTwo) {
  */
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+    //use .length and comparison operator to determine longer string and return that string
+if(stringOne.length > stringTwo.length) {
+    return stringOne;
+} else {
+    return stringTwo;
+}
 
 
     // YOUR CODE ABOVE HERE //
@@ -160,14 +184,25 @@ function longest(stringOne, stringTwo) {
  *
  * TIP: How can we compare Strings? Is 'a' greater than or less than 'b'?
  */
+
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
-
-
+    //Input- if statement
+    //Output- 1 if first is higher than second, -1 if second is higher than first, 0 if =
+    //Constraints- N/A
+    //Edge Cases- stringOne>stringTwo ||stringTwo>stringOne || strings are =
+    if(stringOne<stringTwo) {
+      return 1;
+    }
+    if(stringTwo<stringOne) {
+      return -1;
+    }
+    if(stringOne===stringTwo) {
+      return 0;
+    }
+    
     // YOUR CODE ABOVE HERE //
 }
-
 
 /**
  * Given two Strings, return 1 if the first is lower in alphabetical order than
@@ -178,8 +213,19 @@ function sortAscending(stringOne, stringTwo) {
  */
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
-
+    //Input- if statements
+    //Output-  number
+    //Constraints- N/A
+    //Edge Cases- use comparison operators
+    if(stringOne>stringTwo) {
+        return 1;
+    }
+    if(stringTwo>stringOne) {
+        return -1
+    }
+    if(stringOne===stringTwo) {
+        return 0;
+    }
 
 
     // YOUR CODE ABOVE HERE //
@@ -199,6 +245,6 @@ if((typeof process !== 'undefined') &&
     module.exports.concat = concat;
     module.exports.join = join;
     module.exports.longest = longest;
-    module.exports.sortAscending = sortAscending
+    module.exports.sortAscending = sortAscending;
     module.exports.sortDescending = sortDescending;
 }

@@ -13,6 +13,18 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
+    //Input-  string or number as base to test against
+    //Output- function that test base against a given value
+    //Constraints-use string or number as base
+    //Edge Cases- return a function that test base < value
+    
+    return function(value) {
+        if(value > base) {
+            return true;
+        } else  {
+            return false;
+        }
+    };
     
     
     
@@ -27,7 +39,17 @@ function createGreaterThanFilter(base) {
  */
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
+    //Input-string or number as base to test against
+    //Output- function that test base against a given value
+    //Constraints-use string or number as base
+    //Edge Cases- return a function that test base > value
+    return function(value) {
+        if(value < base) {
+            return true;
+        } else {
+            return false;
+        }
+    };
     
     
     
@@ -41,8 +63,17 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    
-    
+    //Input- a single charaacter from a 'string'
+    //Output-boolean
+    //Constraints-return a test function
+    //Edge Cases-make sure given 'string begins with character passed
+    return function(char) {
+        if(startsWith.toLowerCase() === char.charAt(0).toLowerCase()) {
+            return true;
+        } else { 
+            return false;
+    }
+    };
     
     
     // YOUR CODE ABOVE HERE //
@@ -55,10 +86,17 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    //Input- a single charaacter from a 'string'
+    //Output-boolean
+    //Constraints-return a test function
+    //Edge Cases-make sure given 'string ends with character passed
+    return function(char) {
+        if(endsWith.toLowerCase() === char.charAt(char.length - 1).toLowerCase()) {
+            return true;
+        } else {
+            return false;
+        }
+    };
     // YOUR CODE ABOVE HERE //
 }
 
@@ -71,7 +109,16 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
-    
+    //I-Array of string to be modified
+    //collect modified strings in newArr
+   var  newArr = [];
+    //O-the strings modified
+    for(var i=0; i<strings.length; i++) {
+        //C-loop over strings, modify strings as looped thru, 
+       newArr.push(modify(strings[i]));
+    //return array of modified strings
+    } return newArr;
+        
     
     
     
@@ -89,6 +136,14 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
+    //I-an array of strings and a function
+    for(var i=0; i<strings.length; i++) {
+        if(test(strings) === false) {
+            return false;
+        } else { true;
+    }
+    //O- true if ALL strings pass
+    //C-all strings must pass test 
     
     
     
