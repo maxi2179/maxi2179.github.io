@@ -92,27 +92,44 @@ function makeContactList() {
             //Output-new contacts list with said contact removed
             //Constrainst-N/A
             //Edge Cases-contact must match contacts list to be removed
-            removeContact: function removeContact(contact) {
-                var index;
-                for(var i = 0; i < contacts.length; i++) {
-                    if(contacts[i].nameFirst === contact.nameFirst && contacts[i].nameLast === contact.nameLast) {
-                        index = i;
-                    }
-                } 
+        removeContact: function removeContact(contact) {
+            var index;
+            for(var i = 0; i < contacts.length; i++) {
+                if(contacts[i].nameFirst === contact.nameFirst && contacts[i].nameLast === contact.nameLast) {
+                    index = i;
+                }
+            } 
                 contacts.splice(index, 1);
-            },
+        },
+            
             /*add a printAllContactNames() Function to your makeContactList() factory. The printAllContactNames() Function should 
  *         return a String formated with all the full-names of the separated 
- *         with a line-break, like so:  */
- 
- 
-            //I-loop to find full names of contacts
-            //O-full names seperated by line breaks
-            //C-
+ *         with a line-break, like so: \n
+ */
+            //I-loop to find contacts first and last names
+            //O-list of fullnames = nameFirst and nameLast
+            //C-must be seperated by line breaks '\n' without one on last fullName
             //E-last line shouldn't have a page break
-            printAllContactNames: function() {
-                
+          
+            printAllContactNames: function printAllContactNames() {
+                //create a place to store new strings
+                    var fullName = [];
+                    // loop through contacts
+                for(var i = 0; i < contacts.length; i++) {
+                  //extract first and last name of contacts
+                   fullName.push(`${contacts[i].nameFirst} ${contacts[i].nameLast}`);
+                }
+                   return fullName.reverse().join('\n');
+            }
+
+            
+    };
 }
+
+
+                
+            
+            
     
 
 

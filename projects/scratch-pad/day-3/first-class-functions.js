@@ -135,13 +135,22 @@ function modifyStrings(strings, modify) {
  * TIP: You need to loop over the Strings, right? And pass them to the test?
  */
 function allStringsPass(strings, test) {
+    //I- loop to check if test if strings index pass
+    for(var i = 0; i < strings.length; i ++) {
+        let tst = test(strings[i]);
+        if(tst === false) {
+    //O-false if a test fails
+            return false;
+        }
+    }
+    return true;
+
+         
+        
+    
     // YOUR CODE BELOW HERE //
     //I-an array of strings and a function
-    for(var i=0; i<strings.length; i++) {
-        if(test(strings) === false) {
-            return false;
-        } else { true;
-    }
+   
     //O- true if ALL strings pass
     //C-all strings must pass test 
     

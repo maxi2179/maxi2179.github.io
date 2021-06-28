@@ -21,9 +21,30 @@
  *  b. you'll need a loop, which one is best?
  *  c. you'll wanna make use of the push() method of Array.
  */
-function range(start, end) {
+ function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
+    let newRange = [];
+        //I-a loop that iterates over start number and adds a number til the end number
+    if(start < end) {
+        do{ 
+            newRange.push(start);
+        start++;
+    } while (start <= end);
+        return newRange;
+    } else {start > end; 
+        do {
+            newRange.push(start);
+            start--;
+        } while (start >= end);
+        return newRange;
+    }
+    // if start < end loop up til the end number
+    // while start < end push start-end in order
+    //else if start > end loop down from start to end 
+    // a loop that pushes number of start to number of end in oredr
+    // 
     
+    //O- results of if statements are pushed to newArr with range of start and end
     
     
     
