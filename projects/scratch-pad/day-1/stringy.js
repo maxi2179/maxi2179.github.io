@@ -191,15 +191,15 @@ function sortAscending(stringOne, stringTwo) {
     //Output- 1 if first is higher than second, -1 if second is higher than first, 0 if =
     //Constraints- N/A
     //Edge Cases- stringOne>stringTwo ||stringTwo>stringOne || strings are =
-    if(stringOne<stringTwo) {
+    if(stringOne > stringTwo) {
       return 1;
-    }
-    if(stringTwo<stringOne) {
+    } 
+    if(stringTwo > stringOne) {
       return -1;
-    }
-    if(stringOne===stringTwo) {
+    } 
+    if(stringTwo === stringOne)
       return 0;
-    }
+    
     
     // YOUR CODE ABOVE HERE //
 }
@@ -217,15 +217,15 @@ function sortDescending(stringOne, stringTwo) {
     //Output-  number
     //Constraints- N/A
     //Edge Cases- use comparison operators
-    if(stringOne>stringTwo) {
+    if(stringOne < stringTwo) {
         return 1;
     }
-    if(stringTwo>stringOne) {
-        return -1
+    if(stringTwo < stringOne) {
+        return -1;
     }
-    if(stringOne===stringTwo) {
+    if(stringOne === stringTwo)
         return 0;
-    }
+    
 
 
     // YOUR CODE ABOVE HERE //
