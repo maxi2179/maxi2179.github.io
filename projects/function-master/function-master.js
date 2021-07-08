@@ -194,11 +194,11 @@ var list = {
 
 function isFriend(name, object) {
     let listFriend = object.friends;
-    console.log(listFriend); 
+  // console.log(listFriend); 
     //console.log(name);
     for (let i = 0; i < listFriend.length; i++) {
-       // console.log(listFriend[i]);
-        if(listFriend === {} || listFriend[i].toLowerCase()!== name.toLowerCase()) {
+      // console.log(listFriend[i]);
+        if(listFriend === undefined || listFriend[i].toLowerCase() !== name.toLowerCase()) {
             return  false;
         } else { 
             return true;
@@ -220,7 +220,7 @@ function isFriend(name, object) {
 
 // make a list of those names push to new array
 // make a not friends array list
-
+/*
 function nonFriends(name, array) {
     let nonFriends = [];
     for ( let i = 0; i < array.length; i ++) {
@@ -229,7 +229,7 @@ function nonFriends(name, array) {
         }
         return nonFriends;
 }
-
+*/
 
 
 //////////////////////////////////////////////////////////////////////
@@ -260,7 +260,7 @@ get object keys using Object.keys(object
 loop over the array to access index values
 if object[key] === array[i])remove object property
 
-*/
+
 function removeProperties(object, array) {
     let objKey = Object.keys(object);
  //   console.log(objKey);
@@ -274,6 +274,8 @@ function removeProperties(object, array) {
     return object;
 
 }
+
+*/
 
 //////////////////////////////////////////////////////////////////////
 // Function 16 - Dedup ///////////////////////////////////////////////
