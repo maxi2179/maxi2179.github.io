@@ -468,7 +468,7 @@ console.log(last); // prints => ['mikey', 'matt', 'eric']
 
 //  * Adding an element to the end of an Array using .push()  method
 var add = friends.push('tracy') // adds 'tracy' to end of array
-console.log(add); // prints =. ['mikey', 'mett','eric', 'tracy']
+console.log(add); // prints =. ['mikey', 'matt','eric', 'tracy']
 
 //  * Removing an element from beginning of an array using shift() method
 var offFront = friends.shift(); // removes 'mikey' from beginning of array

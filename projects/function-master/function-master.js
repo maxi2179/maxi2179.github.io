@@ -110,8 +110,8 @@ function welcomeMessage(object) {
 // return message of '<name> is a <species>'
 
 function profileInfo(object) {
-    return `${object.name.charAt(0).toUpperCase() + object.name.slice(1)} is a 
-    ${object.species.charAt(0).toUpperCase() + object.species.slice(1)}`;
+    return(object.name.charAt(0).toUpperCase() + object.name.slice(1)) + ' is a ' +
+    (object.species.charAt(0).toUpperCase() + object.species.slice(1));
     
     
 
@@ -186,25 +186,26 @@ function addFriend (name, object) {
 // if match return true else return false
 
 var list = {
-    name: "jo",
-    friends: ['jo', 'shmo', 'flo', 'lo']
+    name: "mo",
+    friends: ['jo', 'shmo', 'lo', 'flo']
 };
 
 
 
 function isFriend(name, object) {
-   var listFriends = Object.values(object.friends);
-    for (var i = 0; i < listFriends.length; i ++) {
-       if ((listFriends[i] === undefined) || (listFriends[i].toLowerCase() !== name.toLowerCase()));
-       return false;
+    let listFriend = object.friends;
+    console.log(listFriend); 
+    //console.log(name);
+    for (let i = 0; i < listFriend.length; i++) {
+       // console.log(listFriend[i]);
+        if(listFriend === {} || listFriend[i].toLowerCase()!== name.toLowerCase()) {
+            return  false;
+        } else { 
+            return true;
+        }
     }
 }
-   
-
-
-console.log(isFriend('shmo', list));
-       
-    
+            
     
     
 
@@ -220,30 +221,57 @@ console.log(isFriend('shmo', list));
 // make a list of those names push to new array
 // make a not friends array list
 
-function nonFriends(name, array) {}
-  /*  let nonFriends = [];
+function nonFriends(name, array) {
+    let nonFriends = [];
     for ( let i = 0; i < array.length; i ++) {
         
             
         }
-    }
-    return nonFriends;
+        return nonFriends;
+}
 
-*/
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 14 - Update Object ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+// I- object, key, value
+// O- updated object.key with value if key doesnt exist add new object.key with value
+/*
 function updateObject(object, key, value) {
-
+    for (let key in object) {
+        if (object[key] === key) {
+            return object.key = value;
+        } else if (!object[key]) {
+            return object.key = value;
+        }
+    }
+    return object;
 }
+    */
 
 //////////////////////////////////////////////////////////////////////
 // Function 15 - Remove Properties ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+/*
+I- object and array
+O- object return with properties from array removed
+get object keys using Object.keys(object
+loop over the array to access index values
+if object[key] === array[i])remove object property
 
+*/
 function removeProperties(object, array) {
+    let objKey = Object.keys(object);
+ //   console.log(objKey);
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < objKey.length; j++)
+        console.log(objKey);
+        if (array[i] === objKey[j]) {
+            delete object.key;
+        }
+    }
+    return object;
 
 }
 

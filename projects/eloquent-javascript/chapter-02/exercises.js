@@ -7,18 +7,34 @@
 // print each iteration to the page using console.log
 const triangle = ['#', '##', '###', '####', '#####', '######', '#######'];
 
-function triangles() {
-  for (var i = 0; i < triangle.length; i ++) {
-    console.log(triangle[i]);
-  };
+function triangles(num) {
+  for (let i = 0; i < num; i++) {
+    console.log()
+  }
+}
   
 
 
 ////////////////////////////////////////////////////////////////////////////////
 // fizzBuzz ////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+// make a loop that counts to 15
+// for everyremainder of 3 log 'fizz'and every remainder of 5 log 'buzz
+// for remaider of both 3 and 5 log 'fizzbuzz'
 
 function fizzBuzz() {
+  let count = 15;
+  for (let i = 0; i <= count; i++) {
+    if (i % 5 === 0 && i % 3 === 0) {
+      console.log('fizzbuzz');
+    } else if (i % 3 === 0) {
+      console.log('fizz');
+    } else if (i % 5 === 0) {
+      console.log('buzz');
+    } else {
+      console.log(i);
+    }
+  };
   
 }
 
