@@ -34,7 +34,7 @@
 
 var name = 'irie';
 console.log(name); // prints irie
-irie.toUpperCase();
+name.toUpperCase();
 console.log(name); // prints irie
 // using an array method mutates the array
 
@@ -454,28 +454,29 @@ for(let i = 0; i < friends.length; i ++) {
                 */
                 
 //  * Likewise you can use the forEach() method
-friends.forEach(function(item,index,array)) {
-    console.log(item, index);
+friends.forEach(item => console.log(item));
 } /* prints =>  'mikey'
                 'matt'
                 'eric'
                 'dan'
 */
 
+
+var friends = ['mikey', 'matt', 'eric', 'dan'];
 //  * Remove an element from the end of an array using .pop() method
-var last = friends.pop() // removes 'dan' from end of array
+var last = friends.pop(); // removes 'dan' from end of array
 console.log(last); // prints => ['mikey', 'matt', 'eric']
 
 //  * Adding an element to the end of an Array using .push()  method
-var add = friends.push('tracy') // adds 'tracy' to end of array
-console.log(add); // prints =. ['mikey', 'matt','eric', 'tracy']
+var adds = friends.push('tracy'); // adds 'tracy' to end of array
+console.log(adds); // prints =. ['mikey', 'matt','eric', 'tracy']
 
 //  * Removing an element from beginning of an array using shift() method
 var offFront = friends.shift(); // removes 'mikey' from beginning of array
 console.log(offFront); // prints => ['matt', 'eric', 'tracy']
 
 //  * Add an element to the beginning of an array using undhift() method
-var add1 = friends.unshift('mikey mo') // adds 'miikey mo to beginning of the array'
+var add1 = friends.unshift('mikey mo'); // adds 'miikey mo to beginning of the array'
 console.log(add1); // prints => ['mikey mo', 'matt', 'eric', 'tracy']
 
 //  * Find the index of an item in the array using indexOf() method

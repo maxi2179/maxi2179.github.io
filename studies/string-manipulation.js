@@ -112,11 +112,10 @@ console.log(subst1); // prints => 'string'
     * To replace all matches, use (regexp) expression with a /g flag (global match)
 */
 
-const string1 = 'This is to ba replaced with Something?'
+const string1 = 'This is to ba replaced with Something?';
 string1.replace('ba', 'be');
-console.log(string1.replace('ba', 'be') // prints => "This is to be replaced with Something?"
-var regex = /something/i;
-console.log(string1.replace(regex, 'Anything!')); // prints => "This is to ba replaced with Anything!"
+console.log(string1.replace('ba', 'be')); // prints => "This is to be replaced with Something?"
+
 
 //  5. Converting to Upper Case and Lower Case //
 
@@ -128,7 +127,7 @@ console.log(string1.replace(regex, 'Anything!')); // prints => "This is to ba re
 
 var str = 'thIs Is A random StinG to Be UppercaseD';
 console.log(str.toUpperCase()); // prints => "THIS IS A RANDOM STRING TO BE UPPERCASED"
-var str2 = 'thiS is To BE loWERCaseD!'
+var str2 = 'thiS is To BE loWERCaseD!';
 console.log(str2.toLowerCase()); // prints => "this is to be lowercased!"
 
 /*
@@ -140,7 +139,7 @@ console.log(str2.toLowerCase()); // prints => "this is to be lowercased!"
 
 //  * trim() method => removes whitespace fromm both ends of a string
 
-var str3 = '      This will take out all the extra whitespace!#!       '
+var str3 = '      This will take out all the extra whitespace!#!       ';
 console.log(str3.trim()); // prints => "This will take out all the extra whitespace!"
 
 //  7. Converting a String to an Array //
@@ -151,7 +150,6 @@ console.log(str3.trim()); // prints => "This will take out all the extra whitesp
     * If the seperator is "", the returned array will be an array of single characters.
 */
 
-var arr = [];
 var str4 = "this will split";
 console.log(str4.split()); // prints => ["this will split"]
 console.log(''); // prints => ["t","h","i","s"," ","w","i","l","l"," ","s","p","l","i","t"]

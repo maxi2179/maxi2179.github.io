@@ -26,20 +26,22 @@ if (x > 13) {
 
 //  2. (else) statements => specifiy a block of code to execute, if the same specified condition is false.
 
-if (x > 13 || x === NaN) { // here if statement evaluates to false and moves on
+if (x > 13 || x === undefined) { // here if statement evaluates to false and moves on
     return x; // the control flow begins 
 } else { // here it executes the statement
     return false;
 }
 
 //  3. (else...if) statemment => specify a new condition test, if the first condition is false.
+var sky = 'blue';
 
-if (x > 13) { // condition evaluates to false and moves to the next condition
-    return x;
-} else if (x <= 0) { // also evaluates to false and moves to the default else statement
-    return x;
+if (sky === 'red') { // condition evaluates to false and moves to the next condition
+    return 'red';
+} else if (sky === 'yellow') { // also evaluates to false and moves to the default else statement
+    return 'yellow';
 } else { 
-    return 'This is the end of the conditional!'
+    return 'This is the end of the conditional!';
+}
 
 /*
     * Multiplte (if...else) stetements can be nested to create (else...if) clause.
@@ -106,4 +108,5 @@ switch (expr) {
     // expected output: "Mangoes and papayas are $2.79 a pound."
     break;
   default:
+    'Try again later';
 } //  prints => "Mangoes and papayas are $2.79 a pound."

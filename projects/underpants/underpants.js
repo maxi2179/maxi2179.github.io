@@ -500,24 +500,42 @@ _.pluck = function(array, property) {
 /*
 I- collection and function
 O- boolean
-C-
+C- create a function that test if every element is true of false 
+
 E- if <function> doesn't return a boolen
     what if <function> is not given
 loop over collection use map to know which collection it is array || object
+if array iterate over elements and if elements are true return true
+if object for key in object and if keys are true return true else return false
+*/
+/*
+_.every = function(collection, func) {
+    if(Array.isArray(collection)) {
+        for(let i = 0; i < collection.length; i++) {
+            return collection;
+            if(func(collection[i], i, collection) === true){
+                return true;
+            } else {
+                return false;
+            }
+        }
+            }
+    } else if (typeof collection === 'object') {
+        for(let key in collection) {
+            return collection;
+            if(collection[key], key, collection) === true) {
+                return true;
+            } else {
+                return false;
+            }
+        }
 
 */
 
-_.every = function(collection, func) {
-    var newArray = _.map(collection, func);
-    console.log(newArray);
-    console.log(collection)
-}
- 
-
-
-
-
-
+    
+   
+   
+   
 
 /** _.some
 * Arguments:
@@ -559,6 +577,36 @@ _.every = function(collection, func) {
 * Examples:
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
+
+_.reduce = function(array, func, seed) {
+    //check if seed exists
+    if (seed === undefined) {
+        //re-asssign seed to first vallue of array
+        seed = array[0];
+        //loop through array to access each value
+        _.each(array, function(value, i) {
+            if (i !== 0)
+            // make seed the function call of func
+            seed = func(seed, value, i)
+        
+        })
+        //return seed
+        return seed;
+        
+    } else { 
+        //re-assign seed to first value in array
+        
+        // loop through tha array to access each value
+       _.each(array, function(value,i) {
+           
+                seed = func(seed, value, i)
+           
+       })
+        //return seed
+        return seed;
+        
+    }
+}
 
 
 /** _.extend

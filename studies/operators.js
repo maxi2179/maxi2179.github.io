@@ -23,8 +23,8 @@
     operator is possible in order to assign a single value to multiple variables 
  */ 
  
-let x = 2;
-const y = 3;
+var x = 2;
+var y = 3;
 
 console.log(x); // returns = > 2
 
@@ -48,25 +48,25 @@ console.log(x = x * y); // 4 * 3 => returns => 12
     attempt to convert the operands to compatible types before checking equality.
  */
 
-var x = 3;
-var y = 4;
+var a = 3;
+var b= 4;
 
 //  (==) equal to => returns true if operands are equal
 '3' == 3; // returns => true
 //  (!=) not equal to => returns true operands are not equal
-x != 4; // returns => true
+a != 4; // returns => true
 //  (===) strictly equal to => returns true if opearands are equale in value and type
-y === 4; // returns => true
+b === 4; // returns => true
 //  (!==) stricly not equal to => returns true if operands are not equal or are of a different type
-x !== 3; // returns => true
+a !== 3; // returns => true
 //  (>) greater than => returns true if left operand is greatere than the right 
-y > x; // returns => true
+b > x; // returns => true
 // (>=) greater than or equal to => returns true if left operand is greater than or equal to the right 
-y >= x; // returns => true
+b >= a; // returns => true
 // (<) less than => returns true if right operand is less than left operand
-x < y; // returns true
+a < b; // returns true
 // (<=) less than or equal to => returnns true if right is less than left
-x <= y; // returns true
+a <= b; // returns true
 
 
 
@@ -131,7 +131,7 @@ console.log('I am ' + 'Learning a Lot!'); // returns => "I am Learing a Lot!"
 
 // The shorthand assignment operator += can also be used to concatenate strings.
 var mystring = 'alpha';
-mystring += 'bet'; // returns => "alphabet" and assigns this value to mystring.
+console.log(mystring += 'bet'); // prints => "alphabet" and assigns this value to mystring.
 
 
 
@@ -144,6 +144,7 @@ mystring += 'bet'; // returns => "alphabet" and assigns this value to mystring.
 
 //  condition ? val1 : val2 => If condition is true, the operator has the value of val1.
 //  Otherwise it has the value of val2. You can use the conditional operator anywhere you would use a standard operator.
+
+var age = 21;
 var status = (age >= 18) ? 'adult' : 'minor';
-
-
+console.log(status); // prints => 'adult'

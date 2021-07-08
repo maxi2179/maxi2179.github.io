@@ -27,6 +27,7 @@
 function add(num, num1) {
     return num + num1;
 }
+console.log(add(12, 1)); // prints =>13
 
 // add => function name, num & num 1 => parameters, return => statement
 
@@ -54,8 +55,8 @@ console.log(square(3)); // prints => 9
     function in a debugger's stack traces.
 */
 
-const divi = function divide(num1, num2) {num1 / num2}
-
+const divi = function divide(num1, num2) {num1 / num2};
+console.log(divi(26, 2)); // prints => 13
 
 
 //  Calling a Function //
@@ -89,13 +90,12 @@ function squar(n) { return n * n }
     not with function expressions.
 */
 
+
+var squarre = function(n) {
+  return n * n;
+};
 console.log(squarre);   // squarre is hoisted with an initial value undefined.
 console.log(squarre(5));  // Uncaught TypeError: squarre is not a function
-const squarre = function(n) {
-  return n * n;
-}
-
-
 
 //  Function Scope //
 

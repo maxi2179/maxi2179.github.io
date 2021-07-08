@@ -185,20 +185,13 @@ function addFriend (name, object) {
 // loop over friends list to find a match
 // if match return true else return false
 
-var list = {
-    name: "mo",
-    friends: ['jo', 'shmo', 'lo', 'flo']
-};
-
-
-
 function isFriend(name, object) {
     let listFriend = object.friends;
-  // console.log(listFriend); 
+   console.log(listFriend); 
     //console.log(name);
     for (let i = 0; i < listFriend.length; i++) {
       // console.log(listFriend[i]);
-        if(listFriend === undefined || listFriend[i].toLowerCase() !== name.toLowerCase()) {
+        if(listFriend === null || listFriend[i].toLowerCase() !== name.toLowerCase()) {
             return  false;
         } else { 
             return true;
