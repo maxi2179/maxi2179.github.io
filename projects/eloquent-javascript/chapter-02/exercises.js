@@ -9,7 +9,7 @@ const triangle = ['#', '##', '###', '####', '#####', '######', '#######'];
 
 function triangles(num) {
   for (let i = 0; i < num; i++) {
-    console.log()
+    console.log(triangles(4));
   }
 }
   
@@ -22,21 +22,27 @@ function triangles(num) {
 // for everyremainder of 3 log 'fizz'and every remainder of 5 log 'buzz
 // for remaider of both 3 and 5 log 'fizzbuzz'
 
-function fizzBuzz() {
-  let count = 15;
-  for (let i = 0; i <= count; i++) {
+
+
+function fizzBuzz(num, num2) {
+  let result = [];
+  for (let i = num; i <= num2; i++) {
     if (i % 5 === 0 && i % 3 === 0) {
-      console.log('fizzbuzz');
+      result.push('fizzbuzz');
     } else if (i % 3 === 0) {
-      console.log('fizz');
+      result.push('fizz');
     } else if (i % 5 === 0) {
-      console.log('buzz');
+      result.push('buzz');
     } else {
-      console.log(i);
+      result.push(i);
     }
-  };
+    console.log(result);
+  }
   
 }
+
+
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // drawChessboard //////////////////////////////////////////////////////////////

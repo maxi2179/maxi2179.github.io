@@ -227,6 +227,7 @@ _.indexOf = function(array, value) {
         return false => if no element is found
         return false if data type doesn't match
     C- shoud not have side effects
+    must use ternary operator
     E- type of is relavent
 */
 
@@ -271,7 +272,7 @@ _.each = function(collection, func) {
 
 /** _.unique
 * Arguments:
-*   1) An array
+*   1) An array:
 * Objectives:
 *   1) Return a new array of all elements from <array> with duplicates removed
 *   2) Use _.indexOf() from above
@@ -505,37 +506,46 @@ C- create a function that test if every element is true of false
 E- if <function> doesn't return a boolen
     what if <function> is not given
 loop over collection use map to know which collection it is array || object
-if array iterate over elements and if elements are true return true
-if object for key in object and if keys are true return true else return false
-*/
-/*
-_.every = function(collection, func) {
-    if(Array.isArray(collection)) {
-        for(let i = 0; i < collection.length; i++) {
-            return collection;
-            if(func(collection[i], i, collection) === true){
-                return true;
-            } else {
-                return false;
-            }
-        }
-            }
-    } else if (typeof collection === 'object') {
-        for(let key in collection) {
-            return collection;
-            if(collection[key], key, collection) === true) {
-                return true;
-            } else {
-                return false;
-            }
-        }
+if array iterate over elements and if all elements are true return true
+if object for key in object and if all keys are true return true else return false
+make var result to true avoid return in the if statements
+if function is not given  test .each collections value === false result false
+else each collection,function(value, i, collection) {
+    if (func(value, i , collection) === false)
+        result false;
 
 */
 
+_.every = function (collection, func) {
+    // declare a result that defauls to true
+    var result = true;
+    // use an if statement to test if function pararameter 'func' exsits
+    if(!func) {
+       // if it doesnt exsist call _each which resolves to a boolean and
+       // apply each the parameter(value,i, collection) 
+        _.each(collection, function(value, i, collection) {
+            // test if value is ever false(each,has for loop built in)
+            if (value === false) {
+                // if one value is false reassing 'result' to false
+                result = false;
+            }
+        });
+        // to apply a default else statement in case function is provided
+    } else {
+        _.each(collection, function(value, i, collection) {
+            // need to test that every 'value' param is false
+            if (func(value, i, collection) === false) {
+                // if one value evaluates to false then reassign result to false
+                result = false;
+            }
+        });
+    }
+    return result;
     
-   
-   
-   
+    
+};
+
+
 
 /** _.some
 * Arguments:
@@ -557,6 +567,58 @@ _.every = function(collection, func) {
 *   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
+
+/*
+I-  a collection and a function
+O- boolean
+C- N/A
+E- what if no function is given or function doesn't return a boolean
+// use if statement to check if function  param (func) exists
+// declare a result to resolve false
+// use each(collection, function(value, i , collection))
+if value ever resolves true result = true
+default else if funciton is provided each(collection, function(value, i, collection))
+test if every 'value' param is true then reuslt = true
+*/
+
+_.some = function (collection, func) {
+    // avoid returns: set dafault result = false
+    var result = false;
+    // use if statement to see if no func param is given use each
+    if (!func) {
+        //  if func param doen't call _.each which resolves to a boolean
+        // apply each the param (value, i, colleciton)
+        _.each(collection, function(value, i, collection) {
+            // test if 'value' is ever true (each has built-in loop)
+            if (value === true) {
+                // if one value resolves true  result = true
+                result = true;
+            }
+        });
+        // apply a default else if func is provided
+    } else {
+        _.each(collection, function(value, i, collection) {
+            // test each value if ever true ( each has built-in loop)
+            if (func(value, i, collection) === true) {
+                //if one value resolves true result = true
+                result = true;
+            }
+        });
+    }
+    return result;
+};
+    
+
+
+
+
+
+
+
+
+
+
+
 
 
 /** _.reduce
@@ -623,6 +685,39 @@ _.reduce = function(array, func, seed) {
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+
+/*
+I- object1 and object2 and possibly more objects
+O- should return object2 properties copied into object1
+C- N/A
+E- must accept any number of objects
+use Object.assignwith object1 takeing in object2 
+
+*/
+
+_.extend = function (obj1, ...obj2) {
+    // assign obj1 to take obj2 properties
+    // make obj2 take any amount of objects
+    Object.assign(obj1, ...obj2);
+   return obj1;
+    
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////

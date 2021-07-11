@@ -186,21 +186,23 @@ function addFriend (name, object) {
 // if match return true else return false
 
 function isFriend(name, object) {
-    let listFriend = object.friends;
-   console.log(listFriend); 
-    //console.log(name);
-    for (let i = 0; i < listFriend.length; i++) {
-      // console.log(listFriend[i]);
-        if(listFriend === null || listFriend[i].toLowerCase() !== name.toLowerCase()) {
-            return  false;
-        } else { 
-            return true;
+    var friends = object.friends;
+    
+    if(friends === undefined) {
+        return false;
+    } else {
+        for(let i = 0; i <= friends.length; i++) {
+            if(friends[i] === name) {
+                return true;
+            } else if (i === friends.length) {
+                return false;
+            }
         }
     }
 }
-            
-    
-    
+
+
+   
 
 //////////////////////////////////////////////////////////////////////
 // Function 13 - Non-Friends /////////////////////////////////////////
@@ -208,21 +210,24 @@ function isFriend(name, object) {
 // I- a name and array of list of people
 // O- return a list of friends that are not friends with name
 // C- if the people on the list are not in name friends list
-// loop thru list and get a name match
-// when name is match loop thru name.friends list 
+// loop thru array to get elements properties
+// check if name passed in is on the list of array[i].friends
 
 // make a list of those names push to new array
 // make a not friends array list
-/*
-function nonFriends(name, array) {
-    let nonFriends = [];
-    for ( let i = 0; i < array.length; i ++) {
-        
-            
+
+function nonFriends(name, array) { 
+    let notFriends = []; //create empty array to accept results
+    
+    for (let i = 0; i < array.length; i++) { // loop over the array
+        if (name !== array[i].name) { // if name is not in array
+        if(!array[i].friends.includes(name)) { // if objects friends array doesn't contain name
+            notFriends.push(array[i].name); // push objects name property to new array
         }
-        return nonFriends;
+        }
+    } 
+    return notFriends;
 }
-*/
 
 
 //////////////////////////////////////////////////////////////////////
@@ -230,18 +235,13 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 // I- object, key, value
 // O- updated object.key with value if key doesnt exist add new object.key with value
-/*
+
 function updateObject(object, key, value) {
-    for (let key in object) {
-        if (object[key] === key) {
-            return object.key = value;
-        } else if (!object[key]) {
-            return object.key = value;
-        }
-    }
+    object[key] = value;
     return object;
 }
-    */
+        
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 15 - Remove Properties ///////////////////////////////////
@@ -252,31 +252,50 @@ O- object return with properties from array removed
 get object keys using Object.keys(object
 loop over the array to access index values
 if object[key] === array[i])remove object property
-
+*/
 
 function removeProperties(object, array) {
-    let objKey = Object.keys(object);
- //   console.log(objKey);
-    for (let i = 0; i < array.length; i++) {
-        for (let j = 0; j < objKey.length; j++)
-        console.log(objKey);
-        if (array[i] === objKey[j]) {
-            delete object.key;
+    for (let i = 0; i < array.length; i++) { // loop over array 
+        if (object.hasOwnProperty(array[i])) { // chech if object has property of array[i]
+            for ( let key in object) { // loop over keys in object
+                if (key === array[i]) { // if key matches array[i] 
+                    delete object[key];// remove key from object
+                }
+            }
         }
     }
     return object;
-
 }
+    
+    
+    
 
-*/
-
-//////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
 // Function 16 - Dedup ///////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+/*
+I- array 
+O- an array with all dupicate elements removed
+C- N/A
+E- N/A
+loop over the array 
+use indexOf() to find first occurence of array[i]
 
+
+
+*/
 function dedup(array) {
-
+     var newArr = [];
+    for (let i = 0; i < array.length; i++) {
+        if (array.indexOf(array[i], array[0]) === -1) {
+        newArr.push(array[array.indexOf(array, array[i])]);
+    }
+    }
+        return newArr;
 }
+        
+
+
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
